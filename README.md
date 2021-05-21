@@ -3,7 +3,7 @@ The purpose of the Chronic Conditions Package is to analyze claims data and flag
 The package can also be applied to any other source of data where diagnosis and procedure information on patients during the analysis period is complete.
 
 ### V0 Notes
-In V0, the log will finish with an error with the following reference: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
+In V0, the log will finish with an error referencing the following note: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
 
 ### Citation
 If you use the package in your work, we ask that you cite the article which presents the package and shares examples on how to use it:
