@@ -6,7 +6,8 @@ The package can also be applied to any other source of data where diagnosis and 
 In V0, the log will finish with an error with the following reference: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
 
 ### Citation
-If you use the package in your work, we ask that you cite the following article which also has more detailed information on how the package works:
+If you use the package in your work, we ask that you cite the article which presents the package and shares examples on how to use it:
+Ferido, P., Gascue, L.,  St. Clair, P. “How Sick Is My Cohort Of Patients? A General Approach To Identify Chronic Conditions”. 1063-2021 SAS Global Forum 2021.
 https://communities.sas.com/t5/SAS-Global-Forum-Proceedings/How-Sick-Is-My-Cohort-Of-Patients-A-General-Approach-to-Identify/ta-p/726311
 
 ### Contact Information
