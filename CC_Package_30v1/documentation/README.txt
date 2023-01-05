@@ -1,0 +1,1 @@
+These are archived versions of the CCW condition categories. As of 1/4/2023, the algorithm is based off of the codes in the version from Feb 2022.
