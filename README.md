@@ -6,9 +6,9 @@ The package can be applied to any data source of with complete diagnosis and pro
 In 27v0, 27v1 and 30v0, the log will finish with an error referencing the following note: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
 
 ### Versions
-<li> **27v0** - Definitions of the 27 chronic conditions as of Aug 2017 <li>
-<li> **27v1** - Definitions of the 27 chronic conditions of as of Feb 2022 <li>
-<li> **30v0** - Definitions of the 30 chronic conditions as of Feb 2022 <li>
+<strong>27v0</strong> - Definitions of the 27 chronic conditions as of Aug 2017
+<strong>27v1</strong> - Definitions of the 27 chronic conditions of as of Feb 2022 
+<strong>30v0</strong> - Definitions of the 30 chronic conditions as of Feb 2022
 
 ### Citation
 If you use the package in your work, we ask that you cite the article which presents the package and shares examples on how to use it:
