@@ -8,7 +8,7 @@ In 27v0, 27v1 and 30v0, the log will finish with an error referencing the follow
 ### Versions
 <li> <strong>27v0</strong> - Definitions of the 27 chronic conditions as published by CCW on Aug 2017 </li>
 <li> <strong>27v1</strong> - Definitions of the 27 chronic conditions as published by CCW on Feb 2022 </li>
-<li> <strong>30v0</strong> - Definitions of the 30 chronic conditions as published by CCW on Feb 2022 </li>
+<li> <strong>30v0</strong> - Definitions of the 30 chronic conditions as published by CCW on Feb 2022, only applies to ICD-10 period </li>
 
 ### Citation
 If you use the package in your work, we ask that you cite the article which presents the package and shares examples on how to use it:
