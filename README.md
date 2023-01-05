@@ -1,9 +1,14 @@
 # Chronic-Conditions-Package
 The purpose of the Chronic Conditions Package is to analyze claims data and flag the presence of chronic conditions based on user-defined criteria. There are three main criteria for identifying chronic conditions in the claims data: qualifying diagnosis codes, location of diagnosis codes (e.g. inpatient, outpatient, skilled nursing facility, etc.), and the reference period in which to find the diagnoses (e.g. 2 years, 3 years). The final outputs will be yearly beneficiary level files with monthly condition and enrollment flags.
-The package can also be applied to any other source of data where diagnosis and procedure information on patients during the analysis period is complete.
+The package can be applied to any data source of with complete diagnosis and procedure information on patients during the analysis period.
 
-### V0 Notes
-In V0, the log will finish with an error referencing the following note: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
+### Notes
+In 27v0, 27v1 and 30v0, the log will finish with an error referencing the following note: “49: LINE and COLUMN cannot be determined.” However this does not prevent the package from running correctly. Check future versions for cleaner versions of the log, updates to efficiency, and updates to coding definitions.
+
+### Versions
+<li> **27v0** - Definitions of the 27 chronic conditions as of Aug 2017 <li>
+<li> **27v1** - Definitions of the 27 chronic conditions of as of Feb 2022 <li>
+<li> **30v0** - Definitions of the 30 chronic conditions as of Feb 2022 <li>
 
 ### Citation
 If you use the package in your work, we ask that you cite the article which presents the package and shares examples on how to use it:
@@ -12,4 +17,4 @@ https://communities.sas.com/t5/SAS-Global-Forum-Proceedings/How-Sick-Is-My-Cohor
 
 ### Contact Information
 Patricia Ferido  
-pferido@healthpolicy.usc.edu
+pferido@usc.edu
