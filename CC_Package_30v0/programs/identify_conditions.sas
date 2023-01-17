@@ -138,6 +138,7 @@ run;
 		%else %if &filecnt.>1 %then %do;
 		data &condname.;
 			set claims_&condname.1-claims_&condname.&filecnt.;
+			by &id. claim_dt;
 		run;
 		%end;
 	%end;
@@ -267,6 +268,7 @@ run;
 				if length(dxcode2)=3 then dxcode2="00"||dxcode2;
 				if length(dxcode2)=4 then dxcode2="0"||dxcode2;
 			end;
+			last=last.codetype;
 		run;
 		
 		/* To create macro with code lists 
@@ -290,7 +292,7 @@ run;
 				
 			select dxcodelocation into:icd9dxloc_temp separated by '","'
 			from condcodes1
-			where CodeType="ICD9DX" and condition="&cond";
+			where CodeType="ICD9DX" and condition="&cond" and last;
 			
 			%if &i=1 %then %let icd9dxloc=&icd9dxloc_temp.;
 			%else %let icd9dxloc=&icd9dxloc.&sep.&icd9dxloc_temp.;
@@ -306,7 +308,7 @@ run;
 
 			select dxcodelocation into:icd10dxloc_temp separated by '","'
 			from condcodes1
-			where CodeType="ICD10DX" and condition="&cond";
+			where CodeType="ICD10DX" and condition="&cond" and last;
 			
 			%if &i=1 %then %let icd10dxloc=&icd10dxloc_temp.;
 			%else %let icd10dxloc=&icd10dxloc.&sep.&icd10dxloc_temp.;
@@ -322,7 +324,7 @@ run;
 		
 			select dxcodelocation into: hcpcsloc_temp separated by '","'
 			from condcodes1 
-			where CodeType="HCPCS" and condition="&cond";
+			where CodeType="HCPCS" and condition="&cond" and last;
 			
 			%if &i=1 %then %let hcpcsloc=&hcpcsloc_temp.;
 			%else %let hcpcsloc=&hcpcsloc.&sep.&hcpcsloc_temp.;
@@ -338,7 +340,7 @@ run;
 			
 			select dxcodelocation into: ICD9PRCDRloc_temp separated by '","'
 			from condcodes1
-			where CodeType="ICD9PRCDR" and condition="&cond";
+			where CodeType="ICD9PRCDR" and condition="&cond" and last;
 			
 			%if &i=1 %then %let icd9prcdrloc=&icd9prcdrloc_temp.;
 			%else %let icd9prcdrloc=&icd9prcdrloc.&sep.&icd9prcdrloc_temp.;
@@ -354,7 +356,7 @@ run;
 			
 			select dxcodelocation into: ICD10PRCDRloc_temp separated by '","'
 			from condcodes1
-			where CodeType="ICD10PRCDR" and condition="&cond";
+			where CodeType="ICD10PRCDR" and condition="&cond" and last;
 			
 			%if &i=1 %then %let icd10prcdrloc=&icd10prcdrloc_temp.;
 			%else %let icd10prcdrloc=&icd10prcdrloc.&sep.&icd10prcdrloc_temp.;
@@ -386,6 +388,7 @@ run;
 				if length(dxcode2)=3 then dxcode2="00"||dxcode2;
 				if length(dxcode2)=4 then dxcode2="0"||dxcode2;
 			end;
+			last=last.codetype;
 		run;
 			
 		proc sql noprint;
@@ -404,7 +407,7 @@ run;
 		 
 		 select dxcodelocation into:icd9dxexclloc_temp separated by '","'
 		 from exclude1
-		 where CodeType="ICD9DX" and condition="&cond.";
+		 where CodeType="ICD9DX" and condition="&cond." and last;
 		 
 		 %if &i=1 %then %let icd9dxexclloc=&icd9dxexclloc_temp.;
 		 %else %let icd9dxexclloc=&icd9dxexclloc.&sep.&icd9dxexclloc_temp.;
@@ -420,7 +423,7 @@ run;
 		 
 		 select dxcodelocation into:icd10dxexclloc_temp separated by '","'
 		 from exclude1
-		 where CodeType="ICD10DX" and condition="&cond.";
+		 where CodeType="ICD10DX" and condition="&cond." and last;
 		 
 		 %if &i=1 %then %let icd10dxexclloc=&icd10dxexclloc_temp.;
 		 %else %let icd10dxexclloc=&icd10dxexclloc.&sep.&icd10dxexclloc_temp.;
@@ -436,7 +439,7 @@ run;
 		 
 		 select dxcodelocation into:hcpcsexclloc_temp separated by '","'
 		 from exclude1
-		 where CodeType="HCPCS" and condition="&cond.";
+		 where CodeType="HCPCS" and condition="&cond." and last;
 		 
 		 %if &i=1 %then %let hcpcsexclloc=&hcpcsexclloc_temp.;
 		 %else %let hcpcsexclloc=&hcpcsexclloc.&sep.&hcpcsexclloc_temp.;
@@ -452,7 +455,7 @@ run;
 		 
 		 select dxcodelocation into:icd9prcdrexclloc_temp separated by '","'
 		 from exclude1
-		 where CodeType="ICD9PRCDR" and condition="&cond.";
+		 where CodeType="ICD9PRCDR" and condition="&cond." and last;
 		 
 		 %if &i=1 %then %let icd9prcdrexclloc=&icd9prcdrexclloc_temp.;
 		 %else %let icd9prcdrexclloc=&icd9prcdrexclloc.&sep.&icd9prcdrexclloc_temp.;
@@ -468,7 +471,7 @@ run;
 		 
 		 select dxcodelocation into:icd10prcdrexclloc_temp separated by '","'
 		 from exclude1
-		 where CodeType="ICD10PRCDR" and condition="&cond.";
+		 where CodeType="ICD10PRCDR" and condition="&cond." and last;
 		 
 		 %if &i=1 %then %let icd10prcdrexclloc=&icd10prcdrexclloc_temp.;
 		 %else %let icd10prcdrexclloc=&icd10prcdrexclloc.&sep.&icd10prcdrexclloc_temp.;
